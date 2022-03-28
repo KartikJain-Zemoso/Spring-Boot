@@ -15,6 +15,8 @@
 	<description>Demo project for Spring Boot Crud with hibernate</description>
 	<properties>
 		<java.version>17</java.version>
+		<sonar.organization>kartikjain</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,6 +44,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
