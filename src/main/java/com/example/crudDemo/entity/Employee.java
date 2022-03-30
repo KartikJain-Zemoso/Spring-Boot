@@ -1,5 +1,7 @@
 package com.example.crudDemo.entity;
 
+import com.example.crudDemo.rest.EmployeeDTO;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,6 +41,8 @@ public class Employee {
         this.lastName = lastName;
         this.email = email;
     }
+
+
 
     // define getter/setter
 
