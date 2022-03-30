@@ -31,7 +31,7 @@ class EmployeeRepositoryTest {
 
         employeeRepository.save(employee);
 
-        Assertions.assertNotNull(employee.getId());
+        org.assertj.core.api.Assertions.assertThat(employee.getId()).isGreaterThan(0);
     }
 
     @Test

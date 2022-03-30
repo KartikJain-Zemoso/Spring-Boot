@@ -9,7 +9,7 @@ class CrudeDemoApplicationTests {
 
 	@Test
 	void contextLoads() {
-		Assertions.assertThat(10).isEqualTo(10);
+		Assertions.assertThat(10).isEqualTo(5+5);
 	}
 
 }
