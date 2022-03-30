@@ -39,18 +39,17 @@ public class EmployeeRestController {
     }
 
     @PostMapping("/employees")
-    public Employee addEmployee(@RequestBody EmployeeDTO employeeDTO){
-        Employee employee = new Employee(employeeDTO.getFirstName(), employeeDTO.getLastName(),employeeDTO.getEmail());
+    public Employee addEmployee(@RequestBody Employee employee){
         employee.setId(0);
         employeeService.save(employee);
         return employee;
     }
     @PutMapping("/employees")
-    public Employee updateEmployee(@RequestBody EmployeeDTO employeeDTO){
-        Employee employee = new Employee(employeeDTO.getFirstName(), employeeDTO.getLastName(),employeeDTO.getEmail());
-        employeeService.save(employee);
+    public Employee updateEmployee(@RequestBody Employee theEmployee) {
 
-        return employee;
+        employeeService.save(theEmployee);
+
+        return theEmployee;
     }
 
     // add mapping for DELETE /employees/{employeeId} - delete employee
