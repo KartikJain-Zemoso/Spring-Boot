@@ -55,7 +55,7 @@ class EmployeeRepositoryTest {
     @Order(4)
     @Rollback(value = false)
     public void updateEmployeeTest(){
-        Employee employee = employeeRepository.findById(13).get();
+        Employee employee = employeeRepository.findById(15).get();
         employee.setEmail("ram@gmail.com");
       Employee updatedEmployee = employeeRepository.save(employee);
         org.assertj.core.api.Assertions.assertThat(updatedEmployee.getEmail()).isEqualTo("ram@gmail.com");
@@ -64,7 +64,7 @@ class EmployeeRepositoryTest {
     @Order(5)
     @Rollback(value = false)
     public void deleteEmployeeTest(){
-        Employee employee = employeeRepository.findById(13).get();
+        Employee employee = employeeRepository.findById(15).get();
          employeeRepository.delete(employee);
          Employee employee1 = null;
 
