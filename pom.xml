@@ -14,7 +14,7 @@
 	<name>CrudeDemo</name>
 	<description>Demo project for Spring Boot Crud with hibernate</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>11</java.version>
 		<sonar.projectKey>KartikJain-Zemoso_Spring-Boot</sonar.projectKey>
 		<sonar.organization>kartikjain</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>

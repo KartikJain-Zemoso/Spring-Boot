@@ -4,6 +4,7 @@ import com.example.crudDemo.entity.Employee;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 
@@ -28,7 +29,7 @@ class EmployeeRepositoryTest {
     @Rollback(value = false)
     public void saveEmployeeTest(){
         Employee employee = new Employee("Abc", "Pqr","abc@gmail.com");
-
+        employee.setId(0);
         employeeRepository.save(employee);
 
         org.assertj.core.api.Assertions.assertThat(employee.getId()).isGreaterThan(0);
@@ -55,16 +56,21 @@ class EmployeeRepositoryTest {
     @Order(4)
     @Rollback(value = false)
     public void updateEmployeeTest(){
-        Employee employee = employeeRepository.findById(17).get();
-        employee.setEmail("ram@gmail.com");
+        Employee employee = employeeRepository.findById(1).get();
+        employee.setFirstName("Leslie");
+        employee.setLastName("Andrews");
+        employee.setEmail("leslie@gmail.com");
       Employee updatedEmployee = employeeRepository.save(employee);
-        org.assertj.core.api.Assertions.assertThat(updatedEmployee.getEmail()).isEqualTo("ram@gmail.com");
+        org.assertj.core.api.Assertions.assertThat(updatedEmployee.getEmail()).isEqualTo("leslie@gmail.com");
+        org.assertj.core.api.Assertions.assertThat(updatedEmployee.getFirstName()).isEqualTo("Leslie");
+        org.assertj.core.api.Assertions.assertThat(updatedEmployee.getLastName()).isEqualTo("Andrews");
+
     }
     @Test
     @Order(5)
     @Rollback(value = false)
     public void deleteEmployeeTest(){
-        Employee employee = employeeRepository.findById(17).get();
+        Employee employee = employeeRepository.findById(50).get();
          employeeRepository.delete(employee);
          Employee employee1 = null;
 

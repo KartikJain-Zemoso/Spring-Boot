@@ -1,21 +1,22 @@
-package com.example.crudDemo.service;
 
-import com.example.crudDemo.dao.EmployeeRepository;
-import com.example.crudDemo.entity.Employee;
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
+        package com.example.crudDemo.service;
 
-import java.util.Optional;
+        import com.example.crudDemo.dao.EmployeeRepository;
+        import com.example.crudDemo.entity.Employee;
+        import org.assertj.core.api.Assertions;
+        import org.junit.jupiter.api.BeforeEach;
+        import org.junit.jupiter.api.Test;
+        import org.junit.jupiter.api.extension.ExtendWith;
+        import org.mockito.InjectMocks;
+        import org.mockito.Mock;
+        import org.mockito.junit.jupiter.MockitoExtension;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.boot.test.context.SpringBootTest;
+        import org.springframework.test.annotation.Rollback;
 
-import static org.mockito.Mockito.verify;
+        import java.util.Optional;
+
+        import static org.mockito.Mockito.verify;
 
 
 @SpringBootTest
@@ -36,16 +37,16 @@ class EmployeeServiceImpTest {
         employeeService.findAll();
         verify(employeeRepository).findAll();
     }
+//
+//    @Test
+//    @Rollback(value = false)
+//    void findById() {
+//        Employee employee = employeeService.findById(1);
+//        Optional<Employee> employee1 = employeeRepository.findById(1);
+//        if(employee1.isPresent()){
+//            Assertions.assertThat(employee1.get()).isEqualTo(employee);
+//        }
 
-    @Test
-    @Rollback(value = false)
-   void findById() {
-       Employee employee = employeeService.findById(1);
-       Optional<Employee> employee1 = employeeRepository.findById(1);
-       if(employee1.isPresent()){
-           Assertions.assertThat(employee1.get()).isEqualTo(employee);
-       }
-
-    }
+//    }
 
 }
